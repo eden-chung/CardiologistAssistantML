@@ -1,0 +1,313 @@
+<meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doctor's Office Questionnaire</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Doctor's Office Questionnaire</h1>
+
+    <a class="twitter-grid" href="https://twitter.com/mikegeecmu">National Park Tweets </a> 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <form id="questionnaire" action="/submit" method="post">
+      <label for="questionTitle">Name</label>
+      <input id="textInput" name="name" required><br><br>
+
+      <label for="questionTitle">Age</label>
+      <input type="number" id="textInput" name="age" required><br><br>
+
+      <label for="questionTitle">Sex</label>
+      <select name="sex" required>
+        <option value="" disabled selected>--Select an answer--</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select><br><br>
+
+      <label for="questionTitle">How long have you been having chest pain?</label>
+      <input type="number" id="textInput" name="lengthpain" required><br><br>
+
+      <label for="questionTitle">Quality of pain</label>
+      <div id="checkbox">
+        <div>
+          <input type="checkbox" name="pressure">
+          <label for="checkboxtext">Pressure</label>
+        </div>
+        <div>
+          <input type="checkbox" name="crushing">
+          <label for="checkboxtext">Crushing</label>
+        </div>
+        <div>
+          <input type="checkbox" name="squeezing">
+          <label for="checkboxtext">Squeezing</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tightness">
+          <label for="checkboxtext">Tightness</label>
+        </div>
+        <div>
+          <input type="checkbox" name="dull ache">
+          <label for="checkboxtext">Dull ache</label>
+        </div>
+        <div>
+          <input type="checkbox" name="burning">
+          <label for="checkboxtext">Burning</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sharp">
+          <label for="checkboxtext">Sharp</label>
+        </div>
+        <div>
+          <input type="checkbox" name="pins and needles">
+          <label for="checkboxtext">Pins and needles</label>
+        </div>
+        <div>
+          <input type="checkbox" id="otherCheckbox1">
+          <label for="checkboxtext">Other</label>
+        </div>
+        <div>
+          <input type="text" id="otherText1" name="otherpain" placeholder="Please specify" style="display: none;">
+        </div>
+      </div>
+      
+
+      <label for="questionTitle">Location of pain</label>
+      <div id="checkbox">
+        <div>
+          <input type="checkbox" name="middle of chest">
+          <label for="checkboxtext">Middle of chest</label>
+        </div>
+        <div>
+          <input type="checkbox" name="left side of chest">
+          <label for="checkboxtext">Left side of chest</label>
+        </div>
+        <div>
+          <input type="checkbox" name="neck">
+          <label for="checkboxtext">Neck</label>
+        </div>
+        <div>
+          <input type="checkbox" name="jaw">
+          <label for="checkboxtext">Jaw</label>
+        </div>
+        <div>
+          <input type="checkbox" name="left shoulder/arm">
+          <label for="checkboxtext">Left shoulder/arm</label>
+        </div>
+        <div>
+          <input type="checkbox" name="left arm">
+          <label for="checkboxtext">Left arm</label>
+        </div>
+        <div>
+          <input type="checkbox" name="stomach area">
+          <label for="checkboxtext">Stomach area</label>
+        </div>
+        <div>
+          <input type="checkbox" id="otherCheckbox2">
+          <label for="checkboxtext">Other</label>
+        </div>
+        <div>
+          <input type="text" id="otherText2" name="otherlocation" placeholder="Please specify" style="display: none;">
+        </div>
+      </div>
+      
+
+      <label for="questionTitle">Radiation of pain</label>
+      <div id="checkbox">
+        <div>
+          <input type="checkbox" name="rto the left shoulder">
+          <label for="checkboxtext">To the left shoulder</label>
+        </div>
+        <div>
+          <input type="checkbox" name="rup the neck">
+          <label for="checkboxtext">Up the neck</label>
+        </div>
+        <div>
+          <input type="checkbox" name="rto the jaw">
+          <label for="checkboxtext">To the jaw</label>
+        </div>
+        <div>
+          <input type="checkbox" name="rdown left arm">
+          <label for="checkboxtext">Down left arm</label>
+        </div>
+        <div>
+          <input type="checkbox" name="rto the back">
+          <label for="checkboxtext">To the back</label>
+        </div>
+        <div>
+          <input type="checkbox" id="otherCheckbox3">
+          <label for="checkboxtext">Other</label>
+        </div>
+        <div>
+          <input type="text" id="otherText3" name="otherradiation" placeholder="Please specify" style="display: none;">
+        </div>
+      </div>
+      
+      <label for="questionTitle">Duration of pain</label>
+      <select name="durationpain" required>
+        <option value="" disabled selected>--Select an answer--</option>
+        <option>Seconds</option>
+        <option>Minutes</option>
+        <option>Hours</option>
+        <option>Whole day</option>
+      </select><br><br>
+
+      <label for="questionTitle">Frequency of pain</label>
+      <select name="frequencypain">
+        <option value="" disabled selected>--Select an answer--</option>
+        <option>Constant</option>
+        <option>Comes and goes</option>
+      </select><br><br>
+
+      <label for="questionTitle">Precipitants of pain</label>
+      <div id="checkbox">
+        <div>
+          <input type="checkbox" name="exertion">
+          <label for="checkboxtext">Exertion</label>
+        </div>
+        <div>
+          <input type="checkbox" name="lifting of heavy objects">
+          <label for="checkboxtext">Lifting of heavy objects</label>
+        </div>
+        <div>
+          <input type="checkbox" name="emotional stress">
+          <label for="checkboxtext">Emotional stress</label>
+        </div>
+        <div>
+          <input type="checkbox" name="eating">
+          <label for="checkboxtext">Eating</label>
+        </div>
+        <div>
+          <input type="checkbox" name="lying down">
+          <label for="checkboxtext">Lying down</label>
+        </div>
+        <div>
+          <input type="checkbox" name="taking a deep breath">
+          <label for="checkboxtext">Taking a deep breath</label>
+        </div>
+        <div>
+          <input type="checkbox" name="direct palpation">
+          <label for="checkboxtext">Direct palpation</label>
+        </div>
+        <div>
+          <input type="checkbox" name="at rest">
+          <label for="checkboxtext">At rest</label>
+        </div>
+        <div>
+          <input type="checkbox" id="otherCheckbox4">
+          <label for="checkboxtext">Other</label>
+        </div>
+        <div>
+          <input type="text" id="otherText4" name="otherprecipitants" placeholder="Please specify" style="display: none;">
+        </div>
+      </div>
+      
+
+      <label for="questionTitle">Pain is relieved by</label>
+      <div id="checkbox">
+        <div>
+          <input type="checkbox" name="rest">
+          <label for="checkboxtext">Rest</label>
+        </div>
+        <div>
+          <input type="checkbox" name="eating food">
+          <label for="checkboxtext">Eating food</label>
+        </div>
+        <div>
+          <input type="checkbox" id="otherCheckbox5">
+          <label for="checkboxtext">Other</label>
+        </div>
+        <div>
+          <input type="text" id="otherText5" name="otherrelief" placeholder="Please specify" style="display: none;">
+        </div>
+      </div>
+
+      <label for="questionTitle">Associated symptoms</label>
+      <div id="checkbox">
+        <div>
+          <input type="checkbox" name="shortness of breath">
+          <label for="checkboxtext" >Shortness of breath</label>
+        </div>
+        <div>
+          <input type="checkbox" name="palpitations">
+          <label for="checkboxtext">Palpitations</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sweating">
+          <label for="checkboxtext">Sweating</label>
+        </div>
+        <div>
+          <input type="checkbox" name="nausea">
+          <label for="checkboxtext">Nausea</label>
+        </div>
+        <div>
+          <input type="checkbox" name="dizziness">
+          <label for="checkboxtext">Dizziness</label>
+        </div>
+        <div>
+          <input type="checkbox" name="fainting">
+          <label for="checkboxtext">Fainting</label>
+        </div>
+        <div>
+          <input type="checkbox" name="fever">
+          <label for="checkboxtext">Fever</label>
+        </div>
+        <div>
+          <input type="checkbox" name="cough">
+          <label for="checkboxtext">Cough</label>
+        </div>
+        <div>
+          <input type="checkbox" id="otherCheckbox6">
+          <label for="checkboxtext">Other</label>
+        </div>
+        <div>
+          <input type="text" id="otherText6" name="othersymptoms" placeholder="Please specify" style="display: none;">
+        </div>
+      </div>
+
+      <label for="questionTitle">Risk factors</label>
+      <div id="checkboxGroupRiskFactors" class="checkbox-group">
+        <div>
+          <input type="checkbox" name="high blood pressure">
+          <label for="checkboxtext">High blood pressure</label>
+        </div>
+        <div>
+          <input type="checkbox" name="diabetes">
+          <label for="checkboxtext">Diabetes</label>
+        </div>
+        <div>
+          <input type="checkbox" name="high cholesterol">
+          <label for="checkboxtext">High cholesterol</label>
+        </div>
+        <div>
+          <input type="checkbox" name="smoking">
+          <label for="checkboxtext">Smoking</label>
+        </div>
+        <div>
+          <input type="checkbox" name="familyhist">
+          <label for="checkboxtext">Family history of heart attack and stroke before age 60</label>
+        </div>
+        <div>
+          <input type="checkbox" name="priorhistory">
+          <label for="checkboxtext">Prior history of coronary artery disease or angioplasty/stenting</label>
+        </div>
+        <div>
+          <input type="checkbox" id="otherCheckbox7">
+          <label for="checkboxtext">Other</label>
+        </div>
+        <div>
+          <input type="text" id="otherText7" name="otherrisks" placeholder="Please specify" style="display: none;">
+        </div>
+      </div>
+      
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
